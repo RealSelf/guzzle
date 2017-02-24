@@ -274,6 +274,10 @@ class Url
             $path = '/' . implode('/', $path);
         }
 
+        if (is_null($path)) {
+            $path = '';
+        }
+
         $this->path = strtr($path, $pathReplace);
 
         return $this;
