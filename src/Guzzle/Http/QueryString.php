@@ -239,6 +239,10 @@ class QueryString extends Collection
      */
     public function encodeValue($value)
     {
+        if (is_null($value)) {
+            $value = '';
+        }
+
         if ($this->urlEncode == self::RFC_3986) {
             return rawurlencode($value);
         } elseif ($this->urlEncode == self::FORM_URLENCODED) {
